@@ -1,0 +1,31 @@
+<template name="layout">
+	{{> navbar}}
+	<div class="container">
+		{{> yield}}	
+	</div>
+</template>
+
+<template name="home">
+	<h1>Test</h1>
+	<a href="{{pathFor 'secondpage'}}"><button>Take me to the second Page</button></a>
+	<button class="data">Click Here to Add Data</button>
+	{{#if currentUser}}
+	{{ #each data_return }}
+	<p>{{data}}</p>
+	<p>{{name}}</p>
+	<p>{{social}}</p>
+	{{/each}}
+	{{/if}}
+</template>
+
+
+<template name="navbar">
+	<h1>This is my test header</h1>
+	{{>loginButtons}}
+</template>
+
+
+<template name="secondpage">
+	<h1>This is the second page.</h1>
+	<a href="{{pathFor 'Home'}}"><button>Take me home</button></a>
+</template>
